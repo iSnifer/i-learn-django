@@ -7,4 +7,10 @@ class PostAdmin(admin.ModelAdmin):
         ('Date Info', {'fields': ['post_date']})
     ]
 
+    list_display = ('post_header', 'post_date', 'was_published_recently')
+
+    list_filter = ['post_date']
+
+    search_fields = ['post_header']
+
 admin.site.register(Post, PostAdmin)
