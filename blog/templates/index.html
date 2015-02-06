@@ -1,0 +1,15 @@
+<div class="post-list">
+    {% if latest_blog_entry %}
+        <ul class="post-list__list">
+            {% for post in latest_blog_entry %}
+                <li class="post-list__item">
+                    <a class="post-list__link" href="{% url 'blog:detail' post.id %}">
+                        {{ post.post_header }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="post-list__no-post">Blog is clear</p>
+    {% endif %}
+</div>
